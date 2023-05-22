@@ -15,10 +15,10 @@ mongoose.connect(process.env.MONGO_URL);
 
 app.use(express.json());
 app.use(cors());
-app.post("/todo/add", addTodo);
-app.get("/todo", getTodo);
-app.put("/todo/:id", updateTodo);
-app.delete("/todo/:id", deleteTodo);
+app.post("/api/todo/add", addTodo);
+app.get("/api/todo", getTodo);
+app.put("/api/todo/:id", updateTodo);
+app.delete("/api/todo/:id", deleteTodo);
 
 mongoose.connection.once("open", (err) => {
   if (err) {
