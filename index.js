@@ -15,6 +15,8 @@ mongoose.connect(process.env.MONGO_URL);
 
 app.use(express.json());
 app.use(cors());
+app.use(express.static("public"));
+
 app.post("/api/todo/add", addTodo);
 app.get("/api/todo", getTodo);
 app.put("/api/todo/:id", updateTodo);
